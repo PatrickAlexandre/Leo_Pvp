@@ -10,12 +10,12 @@
 /* Styles spécifiques pour la barre de progression de l'espérance de vie */
 #esperanceHP .progress-bar {
     height: 20px;
-    background-color: #ff9800; /* Orange pour indiquer l'espérance de vie */
+    background-color: #47ce00; /* Pour indiquer l'espérance de vie */
     text-align: center;
     line-height: 20px;
     color: white;
-    border-radius: 8px 0 0 8px; /* Arrondi uniquement du côté gauche pour commencer */
-    width: 100%; /* Initialisé à 0, sera mis à jour dynamiquement par JS */
+    border-radius: 8px 8px 8px 8px;
+    width: 100%; /* Initialisé à 100%, sera mis à jour dynamiquement par JS */
     position: absolute;
     left: 0;
     transition: width 0.5s ease-in-out;

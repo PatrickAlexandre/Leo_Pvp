@@ -21,11 +21,11 @@ var nightsLived = Math.floor((currentDate - birthDate) / oneDay);
 
 // Mise à jour de l'affichage
 document.getElementById("current-age").innerText = "Level " + age;
-document.getElementById("nights-lived").innerText = nightsLived + " lunes";
+document.getElementById("nights-lived").innerText = nightsLived + " Dark Moons";
 
     // Mise à jour de la barre de progression pour l'espérance de vie
     var gender = document.getElementById("gender").value;
-    var maxLifeExpectancy = (gender === "male") ? 80 : 79; // 80 ans pour un homme, 79 pour une femme
+    var maxLifeExpectancy = (gender === "male") ? 79.1 : 85.1; // UPDATE Esperance de Vie
     var lifePercentage = (age / maxLifeExpectancy) * 100;
     
     // S'assurer que le pourcentage ne dépasse pas 100%
@@ -44,9 +44,6 @@ document.addEventListener('DOMContentLoaded', function() {
     calculerAgeEtNuitsEcoulées();
 });
 
-
-
-
 // Mettre par defaut la date du jour
 function setDefaultDate() {
     var today = new Date();
@@ -56,7 +53,4 @@ function setDefaultDate() {
     today = yyyy + '-' + mm + '-' + dd;
     document.getElementById('BirthDate').value = today;
 }
-
-// Ajoutez ici votre fonction calculerAgeEtNuitsEcoulées
-
 setDefaultDate(); // Ceci définit la date du jour par défaut

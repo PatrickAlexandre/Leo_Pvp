@@ -1,0 +1,32 @@
+.progress-container {
+    width: 100%;
+    border-radius: 8px;
+    position: relative; /* Nécessaire pour positionner correctement les barres de progression et de dépassement */
+}
+
+         /* Styles spécifiques pour la barre de progression d'énergie et mana
+        #energie .progress-bar {
+            height: 20px;
+            background-color: #fcd703;
+            text-align: center;
+            line-height: 20px;
+            color: black;
+            border-radius: 8px;
+            position: absolute;
+            left: 0;
+            transition: width 0.5s ease-in-out;
+        }
+
+
+        #mana .progress-bar {
+            height: 20px;
+            background-color: #007bff;
+            text-align: center;
+            line-height: 20px;
+            color: white;
+            border-radius: 8px;
+            position: absolute;
+            left: 0;
+            transition: width 0.5s ease-in-out;
+        } 
+        */
