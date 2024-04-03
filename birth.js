@@ -31,7 +31,7 @@ function calculerAgeEtNuitsEcoulées() {
     // Mise à jour de la barre de progression pour afficher la vie restante
     var progressBar = document.querySelector("#esperanceHP .progress-bar");
     progressBar.style.width = lifePercentage + "%";
-    progressBar.innerText = lifePercentage.toFixed(1) + "% HP";
+    progressBar.innerText = lifePercentage.toFixed(1) + " %";
 
     // Le calcul de l'âge actuel et du nombre de nuits écoulées reste inchangé
     document.getElementById("current-age").innerText = "Level " + age;
