@@ -1,0 +1,24 @@
+/* Style général pour les conteneurs de barres de progression */
+.progress-container {
+    width: 100%;
+    background-color: #eee; /* Couleur de fond des barres de progression */
+    border-radius: 8px;
+    margin: 20px 0;
+    position: relative; /* Nécessaire pour positionner correctement les barres de progression et de dépassement */
+}
+
+/* Styles spécifiques pour la barre de progression de l'espérance de vie */
+#esperanceHP .progress-bar {
+    height: 20px;
+    background-color: #ff9800; /* Orange pour indiquer l'espérance de vie */
+    text-align: center;
+    line-height: 20px;
+    color: white;
+    border-radius: 8px 0 0 8px; /* Arrondi uniquement du côté gauche pour commencer */
+    width: 100%; /* Initialisé à 0, sera mis à jour dynamiquement par JS */
+    position: absolute;
+    left: 0;
+    transition: width 0.5s ease-in-out;
+    white-space: nowrap;
+    overflow: hidden; /* Cache tout contenu qui dépasse la largeur de la barre */
+}
