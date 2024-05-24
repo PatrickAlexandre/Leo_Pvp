@@ -1,0 +1,21 @@
+ <!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Importer un fichier .txt</title>
+</head>
+<body>
+    <input type="file" id="file-input" />
+    <div id="content" style="white-space: pre-wrap;"></div>
+    
+    <script>
+document.getElementById('file-input').addEventListener('change', function() {
+    var reader = new FileReader();
+    reader.onload = function() {
+        document.getElementById('content').textContent = reader.result;
+    };
+    reader.readAsText(this.files[0]);
+}, false);
+    </script>
+</body>
+</html>

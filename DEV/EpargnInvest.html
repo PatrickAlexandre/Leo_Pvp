@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Optimisateur d'Épargne et d'Investissement</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+            border-collapse: collapse;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .action-btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .action-btn:hover {
+            background-color: #45a049;
+        }
+        .investment-recommendation {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-left: 6px solid #4CAF50;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Optimisateur d'Épargne et d'Investissement</h2>
+
+<div>
+    <label for="type">Type:</label>
+    <select id="type" onchange="updateCategories()">
+        <option value="revenue">Revenu</option>
+        <option value="expense">Dépense</option>
+    </select>
+    <label for="category">Catégorie:</label>
+    <select id="category"></select>
+    
+    <label for="label">Libellé:</label>
+    <input type="text" id="label">
+
+    <label for="amount">Montant:</label>
+    <input type="number" id="amount" required>
+
+    <button class="action-btn" onclick="addEntry()">Ajouter</button>
+</div>
+
+<div id="totalsDisplay"></div>
+
+<div id="investmentRecommendation" class="investment-recommendation" style="display: none;">
+    <h3>Recommandation d'Investissement</h3>
+    <p>Basé sur votre solde net actuel et votre profil de risque, nous recommandons l'investissement suivant: <span id="investmentSuggestion"></span></p>
+</div>
+
+<script>
+let totalRevenues = 0;
+let totalExpenses = 0;
+const revenueCategories = ["Salaire", "Dividendes", "Intérêts", "Autres"];
+const expenseCategories = {
+    "Alimentation": "01 Alimentation et boissons non alcoolisées",
+    "BoissonsAlcool": "02 Boissons alcoolisées, tabac et stupéfiants",
+    "Habillement": "03 Habillement et chaussures",
+    // Ajoutez d'autres catégories COICOP ici...
+};
+
+window.onload = () => {
+    updateCategories(); // Initialise les catégories lors du chargement de la page
+};
+
+function updateCategories() {
+    const typeSelect = document.getElementById('type');
+    const categorySelect = document.getElementById('category');
+    categorySelect.innerHTML = ''; // Efface les options existantes
+    
+    if (typeSelect.value === "revenue") {
+        revenueCategories.forEach(category => {
+            const option = document.createElement('option');
+            option.value = category;
+            option.textContent = category;
+            categorySelect.appendChild(option);
+        });
+    } else {
+        Object.entries(expenseCategories).forEach(([key, value]) => {
+            const option = document.createElement('option');
+            option.value = value;
+            option.textContent = key;
+            categorySelect.appendChild(option);
+        });
+    }
+}
+
+function addEntry() {
+    const type = document.getElementById('type').value;
+    const label = document.getElementById('label').value;
+    const amount = parseFloat(document.getElementById('amount').value);
+    if (isNaN(amount) || amount <= 0) {
+        alert('Veuillez entrer un montant valide.');
+        return;
+    }
+    if (type === 'expense') {
+        totalExpenses += amount;
+    } else {
+        totalRevenues += amount;
+    }
+    updateTotals();
+    updateInvestmentRecommendation();
+}
+
+function updateTotals() {
+    const totalsDisplay = document.getElementById('totalsDisplay');
+    totalsDisplay.innerHTML = `
+        <h3>Total</h3>
+        <p>Revenus Totals: ${totalRevenues.toFixed(2)}</p>
+        <p>Dépenses Totales: ${totalExpenses.toFixed(2)}</p>
+        <p>Solde Net: ${(totalRevenues - totalExpenses).toFixed(2)}</p>
+    `;
+}
+
+function updateInvestmentRecommendation() {
+    const netBalance = totalRevenues - totalExpenses;
+    let suggestion = "Gardez votre argent dans un compte d'épargne à haut rendement.";
+    if (netBalance > 5000) {
+        suggestion = "Envisagez d'investir dans des fonds indiciels à faible coût.";
+    } else if (netBalance > 10000) {
+        suggestion = "Diversifiez avec des actions, des obligations et des fonds indiciels.";
+    }
+    document.getElementById('investmentSuggestion').textContent = suggestion;
+    document.getElementById('investmentRecommendation').style.display = 'block';
+}
+</script>
+</body>
+</html>

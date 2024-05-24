@@ -1,339 +1,214 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>W3.CSS Template</title>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue-grey.css">
-    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="MyProfile.css">
-    <script src="https://kit.fontawesome.com/be85c9a798.js"></script>
-    <style>
-    html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
-    </style>
-  </head>
-<body class="w3-theme-l5">
-
-<!-- Navbar -->
-<div class="w3-top">
- <div class="w3-bar w3-theme-d2 w3-left-align w3-large">
-  <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
-  <a href="#" class="w3-bar-item w3-button w3-padding-large w3-theme-d4"><i class="fa fa-home w3-margin-right"></i>Logo</a>
-  <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" title="News"><i class="fa fa-globe"></i></a>
-  <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" title="Account Settings"><i class="fa fa-user"></i></a>
-  <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" title="Messages"><i class="fa fa-envelope"></i></a>
-  <div class="w3-dropdown-hover w3-hide-small">
-    <button class="w3-button w3-padding-large" title="Notifications"><i class="fa fa-bell"></i><span class="w3-badge w3-right w3-small w3-green">3</span></button>     
-    <div class="w3-dropdown-content w3-card-4 w3-bar-block" style="width:300px">
-      <a href="#" class="w3-bar-item w3-button">One new friend request</a>
-      <a href="#" class="w3-bar-item w3-button">John Doe posted on your wall</a>
-      <a href="#" class="w3-bar-item w3-button">Jane likes your post</a>
-    </div>
-  </div>
-  <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-padding-large w3-hover-white" title="My Account">
-    <img src="https://64.media.tumblr.com/06be4be00ddb1f20e627b8f8b41caeb9/tumblr_o68u0vgd0p1qkpz2go1_r1_400.gif" class="w3-circle" style="height:23px;width:23px" alt="Avatar">    
-  </a>
- </div>
-</div>
-
-<!-- Navbar on small screens -->
-<div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium w3-large">
-  <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 1</a>
-  <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 2</a>
-  <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 3</a>
-  <a href="#" class="w3-bar-item w3-button w3-padding-large">My Profile</a>
-</div>
-
-<!-- Page Container -->
-<div class="w3-container w3-content" style="max-width:1400px;margin-top:80px">    
-  <!-- The Grid -->
-  <div class="w3-row">
-    <!-- Left Column -->
-    <div class="w3-col m3">
-      <!-- Profile -->
-      <div class="w3-card w3-round w3-white">
-        <div class="w3-container">
-         <h4 id="current-age" class="w3-center"></h4>
-         <div id="nights-lived" class="w3-center" title="Moons"></div>
-         <p class="w3-center"><img src="https://64.media.tumblr.com/06be4be00ddb1f20e627b8f8b41caeb9/tumblr_o68u0vgd0p1qkpz2go1_r1_400.gif" class="w3-circle" style="height:106px;width:106px" alt="Avatar"></p>
-         <div id="esperanceHP" class="progress-container" title="❤️ Health">
-          <div class="progress-bar"></div>
-         </div><br>
-         <hr>
-         <p><i class="fa fa-pencil fa-fw w3-margin-right w3-text-theme"></i> Designer, UI</p>
-         <p><i class="fa fa-home fa-fw w3-margin-right w3-text-theme"></i> London, UK</p>
-         <p><i class="fa fa-birthday-cake fa-fw w3-margin-right w3-text-theme"></i> April 1, 1988</p>
-        </div>
-      </div>
-      <br>
-      
-      <!-- Accordion -->
-      <div class="w3-card w3-round">
-        <div class="w3-white">
-          <button onclick="myFunction('Demo1')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-circle-o-notch fa-fw w3-margin-right"></i> My Groups</button>
-          <div id="Demo1" class="w3-hide w3-container">
-            <p>Some text..</p>
-          </div>
-          <button onclick="myFunction('Demo2')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-calendar-check-o fa-fw w3-margin-right"></i> My Events</button>
-          <div id="Demo2" class="w3-hide w3-container">
-            <p>Some other text..</p>
-          </div>
-          <button onclick="myFunction('Demo3')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-users fa-fw w3-margin-right"></i> My Photos</button>
-          <div id="Demo3" class="w3-hide w3-container">
-         <div class="w3-row-padding">
-         <br>
-           <div class="w3-half">
-             <img src="https://www.w3schools.com/w3images/lights.jpg" style="width:100%" class="w3-margin-bottom">
-           </div>
-           <div class="w3-half">
-             <img src="https://www.w3schools.com/w3images/nature.jpg" style="width:100%" class="w3-margin-bottom">
-           </div>
-           <div class="w3-half">
-             <img src="https://www.w3schools.com/w3images/mountains.jpg" style="width:100%" class="w3-margin-bottom">
-           </div>
-           <div class="w3-half">
-             <img src="https://www.w3schools.com/w3images/forest.jpg" style="width:100%" class="w3-margin-bottom">
-           </div>
-           <div class="w3-half">
-             <img src="https://www.w3schools.com/w3images/nature.jpg" style="width:100%" class="w3-margin-bottom">
-           </div>
-           <div class="w3-half">
-             <img src="https://www.w3schools.com/w3images/snow.jpg" style="width:100%" class="w3-margin-bottom">
-           </div>
-         </div>
-          </div>
-        </div>      
-      </div>
-      <br>
-      
-      <!-- Interests --> 
-      <div class="w3-card w3-round w3-white w3-hide-small">
-        <div class="w3-container">
-          <p>Interests</p>
-          <p>
-            <span class="w3-tag w3-small w3-theme-d5">News</span>
-            <span class="w3-tag w3-small w3-theme-d4">W3Schools</span>
-            <span class="w3-tag w3-small w3-theme-d3">Labels</span>
-            <span class="w3-tag w3-small w3-theme-d2">Games</span>
-            <span class="w3-tag w3-small w3-theme-d1">Friends</span>
-            <span class="w3-tag w3-small w3-theme">Games</span>
-            <span class="w3-tag w3-small w3-theme-l1">Friends</span>
-            <span class="w3-tag w3-small w3-theme-l2">Food</span>
-            <span class="w3-tag w3-small w3-theme-l3">Design</span>
-            <span class="w3-tag w3-small w3-theme-l4">Art</span>
-            <span class="w3-tag w3-small w3-theme-l5">Photos</span>
-          </p>
-        </div>
-      </div>
-      <br>
-      
-      <!-- Alert Box -->
-      <div class="w3-container w3-display-container w3-round w3-theme-l4 w3-border w3-theme-border w3-margin-bottom">
-        <span onclick="this.parentElement.style.display='none'" class="w3-button w3-theme-l3 w3-display-topright">
-          <i class="fa fa-remove"></i>
-        </span>
-        <p><strong contenteditable="true">Username</strong></p>
-        <hr>
-        <input type="date" id="BirthDate" onchange="calculerAgeEtNuitsEcoulées()">
-        <select id="gender" onchange="calculerAgeEtNuitsEcoulées()">
-            <option value="male">male</option>
-            <option value="female">female</option>
-        </select>
-      </div>
-
-      <!-- Alert Box -->
-      <div class="w3-container w3-display-container w3-round w3-theme-l4 w3-border w3-theme-border w3-margin-bottom w3-hide-small">
-        <span onclick="this.parentElement.style.display='none'" class="w3-button w3-theme-l3 w3-display-topright">
-          <i class="fa fa-remove"></i>
-        </span>
-        <p><strong>Hey!</strong></p>
-        <p>People are looking at your profile. Find out who.</p>
-      </div>
-    
-    <!-- End Left Column -->
-    </div>
-    
-    <!-- Middle Column -->
-    <div class="w3-col m7">
-
-      <div class="w3-row-padding">
-        <div class="w3-col m12">
-          <div class="w3-card w3-round w3-white">
-            <div class="w3-container w3-padding">
-              <h6 class="w3-opacity">Social Media template by w3.css</h6>
-              <p contenteditable="true" class="w3-border w3-padding">Status: Feeling Blue</p>
-              <button type="button" class="w3-button w3-theme"><i class="fa fa-pencil"></i>  Post</button> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MMORPG Mobile Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1>MMORPG Mobile Game</h1>
+        </header>
+        <nav>
+            <button class="nav-btn" data-target="home">🏠</button>
+            <button class="nav-btn" data-target="profile">👤</button>
+            <button class="nav-btn" data-target="stats">📊</button>
+            <!-- Remove this button -->
+            <!-- <button class="nav-btn" data-target="specialisation">🌀</button> -->
+            <button class="nav-btn" data-target="combat">🥊</button>
+            <button class="nav-btn" data-target="shop">🛒</button>
+            <button class="nav-btn" data-target="quests">📜</button>
+            <button class="nav-btn" data-target="inventory">📦</button>
+            <button class="nav-btn" data-target="class-selection">♟️</button>
+        </nav>
+        <section id="home" class="content active">
+            <h2>Welcome to the MMORPG Mobile Game</h2>
+            <p>Select an option from the menu to get started.</p>
+        </section>
+        <section id="profile" class="content">
+            <h2>Character Profile</h2>
+            <div class="profile-info">
+                <p>Name: <span id="character-name">Afraid</span></p>
+                <p>Level: <span id="character-level">1</span></p>
+                <p>Experience: <span id="character-exp">0 / 100</span></p>
+                <p>Class: <span id="character-class">Restoration Druid</span></p>
+                <p>Guild: <span id="character-guild">Loco Motives</span></p>
             </div>
-          </div>
-        </div>
-      </div>
-      
-      <div class="w3-container w3-card w3-white w3-round w3-margin"><br>
-        <img src="https://www.w3schools.com/w3images/avatar2.png" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:60px">
-        <span class="w3-right w3-opacity">1 min</span>
-        <h4>John Doe</h4><br>
-        <hr class="w3-clear">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-          <div class="w3-row-padding" style="margin:0 -16px">
-            <div class="w3-half">
-              <img src="https://www.w3schools.com/w3images/lights.jpg" style="width:100%" alt="Northern Lights" class="w3-margin-bottom">
+            <div class="profile-image">
+                <img src="path/to/character-image.jpg" alt="Character Image">
             </div>
-            <div class="w3-half">
-              <img src="https://www.w3schools.com/w3images/nature.jpg" style="width:100%" alt="Nature" class="w3-margin-bottom">
-          </div>
-        </div>
-        <button type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i>  Like</button> 
-        <button type="button" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-comment"></i>  Comment</button> 
-      </div>
-      
-      <div class="w3-container w3-card w3-white w3-round w3-margin"><br>
-        <img src="https://www.w3schools.com/w3images/avatar5.png" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:60px">
-        <span class="w3-right w3-opacity">16 min</span>
-        <h4>Jane Doe</h4><br>
-        <hr class="w3-clear">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        <button type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i>  Like</button> 
-        <button type="button" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-comment"></i>  Comment</button> 
-      </div>  
-
-      <div class="w3-container w3-card w3-white w3-round w3-margin"><br>
-        <img src="https://www.w3schools.com/w3images/avatar6.png" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:60px">
-        <span class="w3-right w3-opacity">32 min</span>
-        <h4>Angie Jane</h4><br>
-        <hr class="w3-clear">
-        <p>Have you seen this?</p>
-        <img src="https://www.w3schools.com/w3images/nature.jpg" style="width:100%" class="w3-margin-bottom">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        <button type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i>  Like</button> 
-        <button type="button" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-comment"></i>  Comment</button> 
-      </div> 
-      
-    <!-- End Middle Column -->
+            <div class="profile-skills">
+                <h3>Skills</h3>
+                <ul id="skill-list">
+                    <!-- Skills will be dynamically added here -->
+                </ul>
+            </div>
+        </section>
+        <section id="stats" class="content">
+            <h2>Character Stats</h2>
+            <div class="stats-grid">
+                <div class="stat">
+                    <span class="label">Vie:</span>
+                    <span id="vie">155,480</span>
+                    <button class="edit-stat" data-stat="vie">✏️</button>
+                </div>
+                <div class="stat">
+                    <span class="label">Mana:</span>
+                    <span id="mana">250,000</span>
+                    <button class="edit-stat" data-stat="mana">✏️</button>
+                </div>
+                <div class="stat">
+                    <span class="label">Intelligence:</span>
+                    <span id="intelligence">5,115</span>
+                    <button class="edit-stat" data-stat="intelligence">✏️</button>
+                </div>
+                <div class="stat">
+                    <span class="label">Endurance:</span>
+                    <span id="endurance">7,774</span>
+                    <button class="edit-stat" data-stat="endurance">✏️</button>
+                </div>
+                <div class="stat">
+                    <span class="label">Coup Critique:</span>
+                    <span id="critique">15%</span>
+                    <button class="edit-stat" data-stat="critique">✏️</button>
+                </div>
+                <div class="stat">
+                    <span class="label">Hâte:</span>
+                    <span id="hate">7%</span>
+                    <button class="edit-stat" data-stat="hate">✏️</button>
+                </div>
+                <div class="stat">
+                    <span class="label">Maîtrise:</span>
+                    <span id="maitrise">5%</span>
+                    <button class="edit-stat" data-stat="maitrise">✏️</button>
+                </div>
+                <div class="stat">
+                    <span class="label">Polyvalence:</span>
+                    <span id="polyvalence">4%</span>
+                    <button class="edit-stat" data-stat="polyvalence">✏️</button>
+                </div>
+            </div>
+        </section>
+        <!-- Remove the specialisation section -->
+        <!-- <section id="specialisation" class="content">
+            <h2>Spécialisation</h2>
+            <div class="spec-list">
+                <div class="spec" data-name="Équilibre">
+                    <h3>Équilibre</h3>
+                    <p>Joueur contre Joueur</p>
+                </div>
+                <div class="spec" data-name="Farouche">
+                    <h3>Farouche</h3>
+                    <p>Joueur contre Joueur</p>
+                </div>
+                <div class="spec" data-name="Gardien">
+                    <h3>Gardien</h3>
+                    <p>Joueur contre Joueur</p>
+                </div>
+                <div class="spec active" data-name="Restauration">
+                    <h3>Restauration</h3>
+                    <p>Joueur contre Joueur</p>
+                </div>
+            </div>
+        </section> -->
+        <section id="combat" class="content">
+            <h2>Combat</h2>
+            <div id="combat-log">
+                <p>Combat log will appear here...</p>
+            </div>
+            <label for="difficulty-select">Select Difficulty:</label>
+            <select id="difficulty-select">
+                <option value="easy">Easy</option>
+                <option value="medium">Medium</option>
+                <option value="hard">Hard</option>
+            </select>
+            <button id="start-combat">Start Combat</button>
+        </section>
+        <section id="shop" class="content">
+            <h2>Shop</h2>
+            <div id="shop-items">
+                <div class="shop-item" data-item="sword" data-price="100">
+                    <h3>Sword</h3>
+                    <p>Price: 100 points</p>
+                    <button class="buy-item">Buy</button>
+                </div>
+                <div class="shop-item" data-item="shield" data-price="150">
+                    <h3>Shield</h3>
+                    <p>Price: 150 points</p>
+                    <button class="buy-item">Buy</button>
+                </div>
+                <div class="shop-item" data-item="potion" data-price="50">
+                    <h3>Potion</h3>
+                    <p>Price: 50 points</p>
+                    <button class="buy-item">Buy</button>
+                </div>
+                <div class="shop-item" data-item="fireball" data-price="200">
+                    <h3>Fireball</h3>
+                    <p>Price: 200 points</p>
+                    <button class="buy-item">Buy</button>
+                </div>
+                <div class="shop-item" data-item="heal" data-price="150">
+                    <h3>Heal</h3>
+                    <p>Price: 150 points</p>
+                    <button class="buy-item">Buy</button>
+                </div>
+            </div>
+            <div>
+                <h3>Your Points: <span id="user-points">0</span></h3>
+            </div>
+        </section>
+        <section id="quests" class="content">
+            <h2>Quests</h2>
+            <div id="quest-list">
+                <div class="quest-item" data-reward="100">
+                    <h3>Defeat 10 Enemies</h3>
+                    <p>Reward: 100 XP</p>
+                    <button class="start-quest">Start Quest</button>
+                </div>
+                <div class="quest-item" data-reward="200">
+                    <h3>Gather 20 Herbs</h3>
+                    <p>Reward: 200 XP</p>
+                    <button class="start-quest">Start Quest</button>
+                </div>
+                <div class="quest-item" data-reward="150">
+                    <h3>Find the Lost Sword</h3>
+                    <p>Reward: 150 XP</p>
+                    <button class="start-quest">Start Quest</button>
+                </div>
+            </div>
+        </section>
+        <section id="inventory" class="content">
+            <h2>Inventory</h2>
+            <div id="inventory-list">
+                <!-- Inventory items will be dynamically added here -->
+            </div>
+        </section>
+        <section id="class-selection" class="content">
+            <h2>Class Selection</h2>
+            <div class="class-list">
+                <div class="class-option" data-class="Warrior">
+                    <h3>Warrior</h3>
+                    <p>High strength and defense</p>
+                    <button class="select-class">Select</button>
+                </div>
+                <div class="class-option" data-class="Mage">
+                    <h3>Mage</h3>
+                    <p>High intelligence and magic power</p>
+                    <button class="select-class">Select</button>
+                </div>
+                <div class="class-option" data-class="Rogue">
+                    <h3>Rogue</h3>
+                    <p>High agility and critical hit</p>
+                    <button class="select-class">Select</button>
+                </div>
+            </div>
+        </section>
     </div>
-    
-    <!-- Right Column -->
-    <div class="w3-col m2">
-      <div class="w3-card w3-round w3-white w3-center">
-        <div class="w3-container">
-          <p>Upcoming Events:</p>
-          <img src="https://www.w3schools.com/w3images/forest.jpg" alt="Forest" style="width:100%;">
-          <p><strong>Holiday</strong></p>
-          <p>Friday 15:00</p>
-          <p><button class="w3-button w3-block w3-theme-l4">Info</button></p>
-        </div>
-      </div>
-      <br>
-
-      <div class="w3-card w3-round w3-white w3-center w3-hide-large">
-        <div class="w3-container w3-hide-small">
-          <p><strong contenteditable="true">Position</strong></p>
-        </div>
-        <iframe src="https://www.google.com/maps/embed?pb=!4v1614665800225!6m8!1m7!1sCAoSLEFGMVFpcE5Dak9fY3ROaUZkZ0F3R1MtTDNzMWZjQk5oV1l3d0N6UHBJN0J3!2m2!1d38.787587279589205!2d-9.390556084601305!3f0!4f0!5f0.7820865974627469" class="w3-hide-small" width="100%" height="250" style="border-radius:100%;" allowfullscreen="" loading="lazy"></iframe>
-        <div class="w3-container">
-          <p><a href="https://www.google.com/flights" target="_blank" class="w3-button w3-block w3-theme-l4">Flights</a></p>
-        </div>
-      </div>
-      <br>
-
-      <div class="w3-card w3-round w3-white w3-center">
-        <div class="w3-container">
-          <p><i class="fa fa-exclamation"></i> <strong>Quests</strong></p>
-          <p>Friday 15:00</p>
-          <hr>
-          <p><strong>Objectives</strong></p>
-          <p>Friday 15:00</p>
-          <hr>
-          <p><strong>Achievements</strong></p>
-          <p>Friday 15:00</p>           
-        </div>
-      </div>
-      <br>
-      
-      <div class="w3-card w3-round w3-white w3-center">
-        <div class="w3-container">
-          <p>Friend Request</p>
-          <img src="https://www.w3schools.com/w3images/avatar6.png" alt="Avatar" style="width:50%"><br>
-          <span>Jane Doe</span>
-          <div class="w3-row w3-opacity">
-            <div class="w3-half">
-              <button class="w3-button w3-block w3-green w3-section" title="Accept"><i class="fa fa-check"></i></button>
-            </div>
-            <div class="w3-half">
-              <button class="w3-button w3-block w3-red w3-section" title="Decline"><i class="fa fa-remove"></i></button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <br>
-
-      <div class="w3-card w3-round w3-white w3-center">
-        <div class="w3-container w3-padding">
-            <h6 class="w3-opacity">Investigation</h6>
-            <p>Perform an email or a phone reverse lookup on our OSINT tool to uncover all social media profiles.</p>
-            <p><input required="" id="email-investigation" placeholder="test@example.com" class="" type="email" autocomplete="email" style="max-width: 100%;"></p>
-            <p><input required="" id="tel-investigation" placeholder="+33601020304" class="" type="tel" autocomplete="tel" style="max-width: 100%;"></p>
-            <button type="button" class="w3-button w3-theme" onclick="investigation()"><i class="fa fa-magnifying-glass"></i> Search</button>
-        </div>
-      </div>
-      <br>      
-      
-      <div class="w3-card w3-round w3-white w3-padding-16 w3-center">
-        <p>ADS</p>
-      </div>
-      <br>
-      
-      <div class="w3-card w3-round w3-white w3-padding-32 w3-center">
-        <p><i class="fa fa-bug w3-xxlarge"></i></p>
-      </div>
-      
-    <!-- End Right Column -->
-    </div>
-    
-  <!-- End Grid -->
-  </div>
-  
-<!-- End Page Container -->
-</div>
-<br>
-
-<!-- Footer -->
-<footer class="w3-container w3-theme-d3 w3-padding-16">
-  <h5>Footer</h5>
-</footer>
-
-<footer class="w3-container w3-theme-d5">
-  <p>Made with <a href="https://www.w3schools.com/spaces" target="_blank">W3Schools Spaces</a></p>
-</footer>
- 
-<script>
-// Accordion
-function myFunction(id) {
-  var x = document.getElementById(id);
-  if (x.className.indexOf("w3-show") == -1) {
-    x.className += " w3-show";
-    x.previousElementSibling.className += " w3-theme-d1";
-  } else { 
-    x.className = x.className.replace("w3-show", "");
-    x.previousElementSibling.className = 
-    x.previousElementSibling.className.replace(" w3-theme-d1", "");
-  }
-}
-
-// Used to toggle the menu on smaller screens when clicking on the menu button
-function openNav() {
-  var x = document.getElementById("navDemo");
-  if (x.className.indexOf("w3-show") == -1) {
-    x.className += " w3-show";
-  } else { 
-    x.className = x.className.replace(" w3-show", "");
-  }
-}
-</script>
-
-<script src="birth.js"></script>
-<script src="OSINT.js"></script>
-
+    <audio id="attack-sound" src="path/to/attack-sound.mp3"></audio>
+    <audio id="quest-sound" src="path/to/quest-sound.mp3"></audio>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
 </body>
-</html> 
+</html>

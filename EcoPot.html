@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Mes Finances</title>
+</head>
+<body>
+<h2>Mes Finances</h2>
+
+<button id="downloadCsv">Télécharger MesDepenses.csv</button>
+<input type="file" id="fileInput" accept=".csv">
+<div id="error" style="color: red;"></div>
+
+<h3>Tableaux Financiers</h3>
+<table id="financesTable">
+    <thead>
+        <tr>
+            <th>Catégorie</th>
+            <th>€ / Mois</th>
+            <th>Dépenses</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Les données seront injectées ici par JavaScript -->
+    </tbody>
+</table>
+
+<script>
+document.getElementById('downloadCsv').addEventListener('click', function() {
+    window.open('https://linxo.com/path/to/MesDepenses.csv');
+});
+
+document.getElementById('fileInput').addEventListener('change', function(e) {
+    const file = e.target.files[0];
+    if (!file) return;
+    parseCsv(file);
+});
+
+// Fonction pour analyser le CSV
+function parseCsv(file) {
+    const reader = new FileReader();
+    reader.onload = function(e) {
+        const text = e.target.result;
+        processCsvData(text);
+    };
+    reader.onerror = function(e) {
+        document.getElementById('error').textContent = 'Erreur de lecture du fichier.';
+    };
+    reader.readAsText(file);
+}
+
+// Traitement des données CSV
+function processCsvData(csvText) {
+    const rows = csvText.split('\n').slice(1); // On ignore l'en-tête
+    const data = rows.map(row => {
+        const columns = row.split(';'); // Changez cela si votre séparateur est différent
+        return {
+            categorie: columns[0],
+            euroParMois: columns[1],
+            depenses: columns[2]
+        };
+    }).filter(row => row.categorie); // Filtre les lignes vides
+
+    updateTable(data);
+}
+
+// Mise à jour du tableau avec les données du fichier CSV
+function updateTable(data) {
+    const tableBody = document.getElementById('financesTable').getElementsByTagName('tbody')[0];
+    tableBody.innerHTML = ''; // Efface les données précédentes
+    data.forEach(item => {
+        let row = tableBody.insertRow();
+        let cell1 = row.insertCell(0);
+        let cell2 = row.insertCell(1);
+        let cell3 = row.insertCell(2);
+        cell1.innerHTML = item.categorie;
+        cell2.innerHTML = item.euroParMois + ' €';
+        cell3.innerHTML = item.depenses + ' €';
+    });
+}
+</script>
+
+</body>
+</html>
