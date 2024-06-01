@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tableau de Bord</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .card.clicked {
+            animation: pulse 0.3s ease-in-out, fadeIn 1s ease-in-out;
+            background-color: #4ade80; /* Green 400 */
+        }
+
+        .click-opacity {
+            transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+        }
+
+        .click-opacity:hover {
+            transform: translateY(-10px);
+        }
+
+        .click-opacity.opacity-10 {
+            opacity: 0.1;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-900 text-white">
+    <div class="border rounded flex flex-col items-center justify-center min-h-screen p-2">
+        <div class="text-center">
+            <h1 class="text-5xl font-extrabold mb-8">THE <span class="text-blue-500">MILLION</span> DOLLAR MORNING</h1>
+        </div>
+        <div class="grid grid-cols-3 gap-8 mt-8">
+            <!-- Row 1 -->
+            <div class="flex flex-col items-center click-opacity p-4 rounded-lg bg-gray-800 hover:bg-gray-700" onclick="toggleOpacity(this)">
+                <i class="fas fa-clock text-6xl text-red-500"></i>
+                <p class="mt-2 text-lg font-semibold">Wake up</p>
+            </div>
+            <div class="flex flex-col items-center click-opacity p-4 rounded-lg bg-gray-800 hover:bg-gray-700" onclick="toggleOpacity(this)">
+                <i class="fas fa-bed text-6xl text-gray-700"></i>
+                <p class="mt-2 text-lg font-semibold">Immediately get out of bed</p>
+            </div>
+            <div class="flex flex-col items-center click-opacity p-4 rounded-lg bg-gray-800 hover:bg-gray-700" onclick="toggleOpacity(this)">
+                <i class="fas fa-ban text-6xl text-red-500"></i>
+                <p class="mt-2 text-lg font-semibold">No phone</p>
+            </div>
+            <!-- Row 2 -->
+            <div class="flex flex-col items-center click-opacity p-4 rounded-lg bg-gray-800 hover:bg-gray-700" onclick="toggleOpacity(this)">
+                <i class="fas fa-shower text-6xl text-blue-500"></i>
+                <p class="mt-2 text-lg font-semibold">Cold shower</p>
+            </div>
+            <div class="flex flex-col items-center click-opacity p-4 rounded-lg bg-gray-800 hover:bg-gray-700" onclick="toggleOpacity(this)">
+                <i class="fas fa-running text-6xl text-red-500"></i>
+                <p class="mt-2 text-lg font-semibold">5 minutes of cardio</p>
+            </div>
+            <div class="flex flex-col items-center click-opacity p-4 rounded-lg bg-gray-800 hover:bg-gray-700" onclick="toggleOpacity(this)">
+                <i class="fas fa-praying-hands text-6xl text-yellow-500"></i>
+                <p class="mt-2 text-lg font-semibold">Meditation</p>
+            </div>
+            <!-- Row 3 -->
+            <div class="flex flex-col items-center click-opacity p-4 rounded-lg bg-gray-800 hover:bg-gray-700" onclick="toggleOpacity(this)">
+                <i class="fas fa-apple-alt text-6xl text-green-500"></i>
+                <p class="mt-2 text-lg font-semibold">Eat a healthy breakfast</p>
+            </div>
+            <div class="flex flex-col items-center click-opacity p-4 rounded-lg bg-gray-800 hover:bg-gray-700" onclick="toggleOpacity(this)">
+                <i class="fas fa-bullseye text-6xl text-red-500"></i>
+                <p class="mt-2 text-lg font-semibold">Set 3 daily goals</p>
+            </div>
+            <div class="flex flex-col items-center click-opacity p-4 rounded-lg bg-gray-800 hover:bg-gray-700" onclick="toggleOpacity(this)">
+                <i class="fas fa-coffee text-6xl text-yellow-800"></i>
+                <p class="mt-2 text-lg font-semibold">Grab a coffee &amp; start hustling</p>
+            </div>
+        </div>
+        <button onclick="resetOpacity()" class="mt-8 px-6 py-3 bg-blue-600 hover:bg-blue-500 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300">Reset</button>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-12 mx-8">
+        <!-- Metrics Cards -->
+        <div class="card flex flex-col items-center text-center p-6 bg-gray-800 rounded-lg hover:bg-gray-700 transition-all duration-300 ease-in-out h-48" onclick="dopamineEffect(this)">
+            <i class="fas fa-fire text-red-400 text-4xl mb-2"></i>
+            <span id="bmr" class="text-white text-xl font-semibold">1500 kcal</span>
+            <span class="text-gray-300 text-base">Métabolisme de Base au Repos</span>
+        </div>
+
+        <div class="card flex flex-col items-center text-center p-6 bg-gray-800 rounded-lg hover:bg-gray-700 transition-all duration-300 ease-in-out h-48" onclick="dopamineEffect(this)">
+            <i class="fas fa-utensils text-green-400 text-4xl mb-2"></i>
+            <span id="dej" class="text-white text-xl font-semibold">500 kcal</span>
+            <span class="text-gray-300 text-base">Dépense Énergétique Journalière</span>
+        </div>
+
+        <div class="card flex flex-col items-center text-center p-6 bg-gray-800 rounded-lg hover:bg-gray-700 transition-all duration-300 ease-in-out cursor-pointer h-48" onclick="dopamineEffect(this); copyToClipboardAndNavigate()">
+            <div class="flex items-center space-x-4 mb-4">
+                <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple126/v4/dd/68/98/dd6898cc-e743-cfba-cc7f-5832c029438a/AppIcon-0-1x_U007emarketing-0-7-0-85-220.png/512x512bb.jpg" alt="Character icon" class="rounded-full w-16 h-16">
+                <div>
+                    <span class="text-yellow-300 text-xl font-semibold block">Sous Chef</span>
+                    <span class="text-gray-300 text-base">Prenez une photo et je vous donnerai des recettes basées sur les aliments que vous aimez et les ingrédients que vous avez</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="card flex flex-col items-center text-center p-6 bg-gray-800 rounded-lg hover:bg-gray-700 transition-all duration-300 ease-in-out h-48" onclick="dopamineEffect(this)">
+            <i class="fas fa-money-bill-wave text-green-400 text-4xl mb-2"></i>
+            <span id="income" class="text-white text-xl font-semibold">$3000</span>
+            <span class="text-gray-300 text-base">Income</span>
+        </div>
+
+        <div class="card flex flex-col items-center text-center p-6 bg-gray-800 rounded-lg hover:bg-gray-700 transition-all duration-300 ease-in-out h-48" onclick="dopamineEffect(this)">
+            <i class="fas fa-receipt text-red-400 text-4xl mb-2"></i>
+            <span id="expenses" class="text-white text-xl font-semibold">$1500</span>
+            <span class="text-gray-300 text-base">Expenses</span>
+        </div>
+
+        <div class="card flex flex-col items-center text-center p-6 bg-gray-800 rounded-lg hover:bg-gray-700 transition-all duration-300 ease-in-out h-48" onclick="dopamineEffect(this)">
+            <i class="fas fa-piggy-bank text-yellow-300 text-4xl mb-2"></i>
+            <span id="net-savings" class="text-white text-xl font-semibold">$1500</span>
+            <span class="text-gray-300 text-base">Net Savings</span>
+        </div>
+
+        <div class="card flex flex-col items-center text-center p-6 bg-gray-800 rounded-lg hover:bg-gray-700 transition-all duration-300 ease-in-out h-48" onclick="dopamineEffect(this)">
+            <i class="fas fa-chart-line text-blue-400 text-4xl mb-2"></i>
+            <span id="investments" class="text-white text-xl font-semibold">$1000</span>
+            <span class="text-gray-300 text-base">Investments</span>
+        </div>
+
+        <div class="card flex flex-col items-center text-center p-6 bg-gray-800 rounded-lg hover:bg-gray-700 transition-all duration-300 ease-in-out h-48" onclick="dopamineEffect(this)">
+            <i class="fas fa-percentage text-purple-400 text-4xl mb-2"></i>
+            <span id="savings-rate" class="text-white text-xl font-semibold">50%</span>
+            <span class="text-gray-300 text-base">Savings Rate</span>
+        </div>
+
+        <div class="card flex flex-col items-center text-center p-6 bg-gray-800 rounded-lg hover:bg-gray-700 transition-all duration-300 ease-in-out h-48" onclick="dopamineEffect(this)">
+            <i class="fas fa-heart text-green-400 text-3xl mb-2"></i>
+            <span class="text-white text-xl font-semibold">72 bpm</span>
+            <span class="text-gray-300 text-base">Fréquence Cardiaque</span>
+        </div>
+
+        <div class="card flex flex-col items-center text-center p-6 bg-gray-800 rounded-lg hover:bg-gray-700 transition-all duration-300 ease-in-out h-48" onclick="dopamineEffect(this)">
+            <i class="fas fa-running text-blue-400 text-4xl mb-2"></i>
+            <span id="nap" class="text-white text-xl font-semibold">1,2</span>
+            <span class="text-gray-300 text-base">Niveau d'Activité Physique</span>
+        </div>
+
+        <div class="card flex flex-col items-center text-center p-6 bg-gray-800 rounded-lg hover:bg-gray-700 transition-all duration-300 ease-in-out h-48" onclick="dopamineEffect(this)">
+            <i class="fas fa-ruler-vertical text-purple-400 text-4xl mb-2"></i>
+            <span id="height" class="text-white text-xl font-semibold">175 cm</span>
+            <span class="text-gray-300 text-base">Taille</span>
+        </div>
+
+        <div class="card flex flex-col items-center text-center p-6 bg-gray-800 rounded-lg hover:bg-gray-700 transition-all duration-300 ease-in-out h-48" onclick="dopamineEffect(this)">
+            <i class="fas fa-weight text-orange-400 text-4xl mb-2"></i>
+            <span id="weight" class="text-white text-xl font-semibold">70 kg</span>
+            <span class="text-gray-300 text-base">Poids</span>
+        </div>
+
+        <div class="card flex flex-col items-center text-center p-6 bg-gray-800 rounded-lg hover:bg-gray-700 transition-all duration-300 ease-in-out h-48" onclick="dopamineEffect(this)">
+            <i class="fas fa-percentage text-red-400 text-4xl mb-2"></i>
+            <span id="bodyfat" class="text-white text-xl font-semibold">15%</span>
+            <span class="text-gray-300 text-base">Taux de Masse Grasse</span>
+        </div>
+    </div>
+
+    <script>
+        function toggleOpacity(element) {
+            element.classList.toggle('opacity-10');
+            var audio = new Audio('draven-passive-sound-effect.mp3');
+            audio.play();
+        }
+
+        function resetOpacity() {
+            const elements = document.querySelectorAll('.click-opacity');
+            elements.forEach(element => {
+                element.classList.remove('opacity-10');
+            });
+        }
+
+        function dopamineEffect(element) {
+            element.classList.add('clicked');
+            setTimeout(() => {
+                element.classList.remove('clicked');
+            }, 300);
+        }
+
+        function copyToClipboardAndNavigate() {
+            const textToCopy = "Voici une photo de mon frigo. Que pourrais-je préparer ?";
+            navigator.clipboard.writeText(textToCopy).then(function() {
+                window.location.href = 'https://chatgpt.com/g/g-3VrgJ1GpH-sous-chef';
+            }, function(err) {
+                console.error('Could not copy text: ', err);
+            });
+        }
+
+        // Extra magical animations
+        document.querySelectorAll('.card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.classList.add('hover:scale-105');
+            });
+
+            card.addEventListener('mouseleave', () => {
+                card.classList.remove('hover:scale-105');
+            });
+        });
+
+        document.querySelectorAll('.click-opacity').forEach(element => {
+            element.addEventListener('click', () => {
+                element.classList.add('hover:scale-110');
+                setTimeout(() => {
+                    element.classList.remove('hover:scale-110');
+                }, 300);
+            });
+        });
+    </script>
+</body>
+
+</html>

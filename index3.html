@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tableau de Bord</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<body class="bg-gray-900 text-white">
+    <div class="border rounded flex flex-col items-center justify-center min-h-screen p-2">
+        <div class="text-center">
+            <h1 class="text-5xl font-extrabold mb-8">THE <span class="text-blue-500">MILLION</span> DOLLAR MORNING</h1>
+        </div>
+        <div class="grid grid-cols-3 gap-8 mt-8">
+            <!-- Row 1 -->
+            <div class="flex flex-col items-center p-4 rounded-lg bg-gray-800 hover:bg-gray-700" onclick="toggleOpacity(this)">
+                <i class="fas fa-clock text-6xl text-red-500"></i>
+                <p class="mt-2 text-lg font-semibold">Wake up</p>
+            </div>
+            <div class="flex flex-col items-center p-4 rounded-lg bg-gray-800 hover:bg-gray-700" onclick="toggleOpacity(this)">
+                <i class="fas fa-bed text-6xl text-gray-700"></i>
+                <p class="mt-2 text-lg font-semibold">Immediately get out of bed</p>
+            </div>
+            <div class="flex flex-col items-center p-4 rounded-lg bg-gray-800 hover:bg-gray-700" onclick="toggleOpacity(this)">
+                <i class="fas fa-ban text-6xl text-red-500"></i>
+                <p class="mt-2 text-lg font-semibold">No phone</p>
+            </div>
+            <!-- Row 2 -->
+            <div class="flex flex-col items-center p-4 rounded-lg bg-gray-800 hover:bg-gray-700" onclick="toggleOpacity(this)">
+                <i class="fas fa-shower text-6xl text-blue-500"></i>
+                <p class="mt-2 text-lg font-semibold">Cold shower</p>
+            </div>
+            <div class="flex flex-col items-center p-4 rounded-lg bg-gray-800 hover:bg-gray-700" onclick="toggleOpacity(this)">
+                <i class="fas fa-running text-6xl text-red-500"></i>
+                <p class="mt-2 text-lg font-semibold">5 minutes of cardio</p>
+            </div>
+            <div class="flex flex-col items-center p-4 rounded-lg bg-gray-800 hover:bg-gray-700" onclick="toggleOpacity(this)">
+                <i class="fas fa-praying-hands text-6xl text-yellow-500"></i>
+                <p class="mt-2 text-lg font-semibold">Meditation</p>
+            </div>
+            <!-- Row 3 -->
+            <div class="flex flex-col items-center p-4 rounded-lg bg-gray-800 hover:bg-gray-700" onclick="toggleOpacity(this)">
+                <i class="fas fa-apple-alt text-6xl text-green-500"></i>
+                <p class="mt-2 text-lg font-semibold">Eat a healthy breakfast</p>
+            </div>
+            <div class="flex flex-col items-center p-4 rounded-lg bg-gray-800 hover:bg-gray-700" onclick="toggleOpacity(this)">
+                <i class="fas fa-bullseye text-6xl text-red-500"></i>
+                <p class="mt-2 text-lg font-semibold">Set 3 daily goals</p>
+            </div>
+            <div class="flex flex-col items-center p-4 rounded-lg bg-gray-800 hover:bg-gray-700" onclick="toggleOpacity(this)">
+                <i class="fas fa-coffee text-6xl text-yellow-800"></i>
+                <p class="mt-2 text-lg font-semibold">Grab a coffee &amp; start hustling</p>
+            </div>
+        </div>
+        <button onclick="resetOpacity()" class="mt-8 px-6 py-3 bg-blue-600 hover:bg-blue-500 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300">Reset</button>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-12 mx-8">
+        <!-- Metrics Cards -->
+        <div class="flex flex-col items-center text-center p-6 bg-gray-800 rounded-lg hover:bg-gray-700 transition-all duration-300 ease-in-out h-48" onclick="dopamineEffect(this)">
+            <i class="fas fa-fire text-red-400 text-4xl mb-2"></i>
+            <span id="bmr" class="text-white text-xl font-semibold">1500 kcal</span>
+            <span class="text-gray-300 text-base">Métabolisme de Base au Repos</span>
+        </div>
+        <!-- The rest of your code goes here -->
+    </div>
+
+    <script>
+        // JavaScript code remains unchanged
+    </script>
+</body>
+
+</html>
